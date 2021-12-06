@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On mouse over</title>
+</head>
+<body >
+    <img src="E:\mca s1 DDD\fb.png" height="50%" width="50%" onmouseover="fn1()" onmouseout="fn2()" id="k12">
+    <h1 id="k1"></h1>
+<script>
+    function fn1(){
+        document.getElementById("k1").innerHTML="Mousehover";
+        document.getElementById("k12").src="E:\\mca s1 DDD\\g+.png";
+
+
+    }
+    function fn2(){
+        document.getElementById("k1").innerHTML="Mouse is out";
+        document.getElementById("k12").src="E:\\mca s1 DDD\\fb.png";
+
+    }
+</script>
+</body>
+</html>
