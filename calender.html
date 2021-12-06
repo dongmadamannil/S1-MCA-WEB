@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+<body>
+    <input type="number" min="1900" max="2199" step="1" value="2021" id="yr" />
+    <input type="button" value="Generate()" onclick="gen()">
+    <h3 id="mnth"></h3>
+   <table border="1" style="text-align: center;">
+       <tr>
+           <th>Sunday</th>
+           <th>Monday</th>
+           <th>Tuesday</th>
+           <th>Wednesday</th>
+           <th>Thursday</th>
+           <th>Friday</th>
+           <th>Saturday</th>
+       </tr>
+       <tr>
+        
+          <td id="1"></td> 
+          <td id="2"></td> 
+          <td id="3"></td> 
+          <td id="4"></td> 
+          <td id="5"></td> 
+          <td id="6"></td> 
+          <td id="7"></td> 
+       </tr>
+       <tr>
+        <td id="8"></td> 
+        <td id="9"></td> 
+        <td id="10"></td> 
+        <td id="11"></td> 
+        <td id="12"></td> 
+        <td id="13"></td> 
+        <td id="14"></td> 
+       </tr>
+       <tr>
+        <td id="15"></td> 
+        <td id="16"></td> 
+        <td id="17"></td> 
+        <td id="18"></td> 
+        <td id="19"></td> 
+        <td id="20"></td> 
+        <td id="21"></td> 
+       </tr>
+       <tr>
+        <td id="22"></td> 
+        <td id="23"></td> 
+        <td id="24"></td> 
+        <td id="25"></td> 
+        <td id="26"></td> 
+        <td id="27"></td> 
+        <td id="28"></td> 
+       </tr>
+       <tr>
+        <td id="29"></td> 
+        <td id="30"></td> 
+        <td id="31"></td> 
+        <td id="32"></td> 
+        <td id="33"></td> 
+        <td id="34"></td> 
+        <td id="35"></td> 
+       </tr>
+   </table> 
+   <input type="button" value="<" onclick="lft()">
+   <input type="button" value=">" onclick="rgt()">
+   <script>
+       month=1;
+       dt="01";
+
+function lft(){
+if(month==1){
+    document.getElementById("yr").value=parseInt(document.getElementById("yr").value)-1;
+    month=12;
+    genr( document.getElementById("yr").value,month);
+}
+else
+{
+    month=month-1;
+    genr( document.getElementById("yr").value,month);
+}
+
+}
+function rgt(){
+    if(month==12){
+    document.getElementById("yr").value=parseInt(document.getElementById("yr").value)+1;
+    month=1;
+    genr( document.getElementById("yr").value,month);
+}
+else
+{
+    month=month+1;
+    genr( document.getElementById("yr").value,month);
+}
+
+}
+
+       function gen(){
+         val1=document.getElementById("yr").value;
+         genr(val1,month);
+       }
+     function genr(val,monthr){
+        arr=[31,28,31,30,31,30,31,31,30,31,30,31];
+        makenull();
+         kval=parseInt(val);
+        if( kval % 4==0 && kval % 100!=0 ||  kval % 400==0){
+            arr['1']=29;
+        }
+        else
+        {
+            arr['1']=28;
+        } 
+        arrayk=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        document.getElementById("mnth").innerHTML=arrayk[monthr-1];
+         ml=val.concat("-"+monthr+"-"+dt);
+       //  alert(ml);
+       const d = new Date(ml);
+       z=parseInt(d.getDay()+1);
+       k=z.toString();
+       m=parseInt(d.getMonth());
+for(i=1;i<=arr[m];++i,++z){
+    if(z>35){
+   z=1;
+   document.getElementById(z.toString()).innerHTML=i;
+
+    }else
+    {
+    document.getElementById(z.toString()).innerHTML=i;
+}}
+
+         }
+       function makenull(){
+           for(i=1;i<=35;i++)
+           {
+               document.getElementById(i).innerHTML="";
+           }
+       }
+   </script>
+</body>
+</html>
