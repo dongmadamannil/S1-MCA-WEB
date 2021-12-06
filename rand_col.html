@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rand col</title>
+</head>
+<body id="k">
+    <input type="Button" onclick="fn()" value="click">
+    <script>
+        function fn(){
+            kl="#" + ((1<<24)*Math.random() | 0).toString(16);
+            document.getElementById("k").style.backgroundColor=kl;
+            //alert(kl);
+        }
+    </script>
+</body>
+</html>
