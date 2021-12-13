@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reg_css.css">
+    <title>Registration</title>
+</head>
+
+<body style="background-image: url('bk.jfif');color: #B2BFF7;">
+  <style>
+        .from_cmn {
+           border-radius: 15px;
+           width: 95%;
+           height: 20px;
+           margin-top: 5px;
+        }
+      .sub{
+          position:absolute;
+          left:30%;
+          top:85%;
+          border-radius: 15px;
+          height: 30px;
+          width: 10%;
+
+      }
+      .rest{
+        position:absolute;
+          left:45%;
+          top:85%;  
+          border-radius: 15px;
+          height: 30px;
+          width: 10%;
+
+      }
+    </style>
+    <div
+        style="background-color: #1E261F;height:50vh;width:50%;border-radius: 15px;position: absolute;left: 10%;top:5%;opacity: 0.5;">
+        <h1 class="hreg">Reg Form</h1>
+        <form>
+            <table class="tblk">
+         <tr><td> <label for="f1" id="k1">Name</label></td> <td><input id="f1" type="text" placeholder="enter ur name" class="from_cmn " onkeyup="val1()" onblur="val1()"></td></tr>
+         <tr><td><label id="k2" for="f2">Age</label></td> <td><input id="f2" type="number" placeholder="enter ur age" class="from_cmn" onkeyup="val2()" onblur="val2()"><br></td></tr>
+                <tr><td>  <label id="k3" for="f3">Email Id</label></td> <td><input id="f3" type="email" placeholder="enter ur Email ID" class="from_cmn" onkeyup="val3()" onblur="val3()"></td></tr>
+                <tr><td>   <label id="k4" for="f11">User Name</label></td> <td><input id="f11" type="text" placeholder="enter user name" class="from_cmn" onkeyup="val4()" onblur="val4()"></td></tr>
+                    <tr><td>    <label for="f13">Password</label></td><td><input id="f13" type="password" placeholder="enter ur Password" class="from_cmn"></td></tr>
+                        <tr><td>     <label for="f14">confirm Password</label></td><td><input id="f14" type="password" placeholder="re-enter Password" class="from_cmn"></td></tr>
+            </table>
+                <input type="submit" value="SUBMIT" class="sub"><input type="reset" value="Clear" class="rest">
+            </from>
+    </div>
+    <script>
+       // console.log(/^([a-z0-9]{5,})$/.test(12345));
+        s1=0;s2=0;s3=0;s4=0;
+function val1(){//validation of name
+val=document.getElementById("f1").value;
+if(/^[a-zA-Z ]{1,30}$/.test(val)){
+   s1=1
+document.getElementById("k1").style.color="green";
+}
+else
+{
+  s1=0;
+  document.getElementById("k1").style.color="red";
+}
+}
+function val2(){//validation of age
+valu1=document.getElementById("f2").value;
+if(valu1>=5 &&valu1<=200)
+{
+s2=1;
+document.getElementById("k2").style.color="green";
+}
+else
+{
+s2=0;
+document.getElementById("k2").style.color="red";
+}
+}
+function val3(){//email validation
+valu2=document.getElementById("f3").value;
+if(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/.test(valu2)){//look into the regex for email
+s3=1;
+document.getElementById("k3").style.color="green";
+}
+else
+{
+s3=0;
+document.getElementById("k3").style.color="red";
+}
+}
+function val4(){//validation of user name
+valu3=document.getElementById("f11").value;
+if(/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(valu3)){
+   s4=1
+document.getElementById("k4").style.color="green";
+}
+else
+{
+  s4=0;
+  document.getElementById("k4").style.color="red";
+}
+}
+
+    </script>
+</body>
+
+</html>
