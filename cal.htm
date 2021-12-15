@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <style>
+        .l{
+            margin-top: 5px;
+        }
+        .t1{
+            border-radius: 5px;
+            height: 25px;
+            width: 40%;
+        }
+    </style>
+    <div style="background-color: blueviolet;height: 40%;width: 40%;position: absolute;top:15%;left: 25%;opacity: 0.9;border-radius: 15px;">
+        <h1 align="center">Calculator</h1><div align="center">
+    <input type="number" id="num1" class="t1">
+    <input type="number" id="num2"  class="t1"><br>
+    <input type="button" value="+" onclick="add()" class="l">
+    <input type="button" value="-"  onclick="sub()" class="l">
+    <input type="button" value="X" onclick="mul()" class="l">
+    <input type="button" value="/" onclick="div()" class="l">
+<!--     <input type="button" value="=" onclick="equ()"> -->
+    <input type="button" value="C" onclick="clr()"></div>
+    <h1 align="center" id="dis">Hello</h1>
+</div>
+    <script>
+function add(){
+    val1= parseInt(document.getElementById("num1").value); 
+  val2= parseInt(document.getElementById("num2").value); 
+    if(val1&&val2){
+   res=val1+val2;
+  document.getElementById("dis").innerHTML=val1+"+"+val2+"="+res;
+    }
+    else
+    {
+        document.getElementById("dis").innerHTML="Plz..enter values";
+
+    }
+}
+function sub(){
+    val1= parseInt(document.getElementById("num1").value); 
+  val2= parseInt(document.getElementById("num2").value); 
+  if(val1&&val2){
+  res=val1-val2;
+  document.getElementById("dis").innerHTML=val1+"-"+val2+"="+res;}
+  else
+    {
+        document.getElementById("dis").innerHTML="Plz..enter values";
+
+    }
+}
+function mul(){
+    val1= parseInt(document.getElementById("num1").value); 
+  val2= parseInt(document.getElementById("num2").value); 
+  if(val1&&val2){
+  res=val1*val2;
+  document.getElementById("dis").innerHTML=val1+"x"+val2+"="+res;}
+  else
+    {
+        document.getElementById("dis").innerHTML="Plz..enter values";
+
+    }
+
+}
+function div(){
+    val1= parseInt(document.getElementById("num1").value); 
+  val2= parseInt(document.getElementById("num2").value); 
+  if(val1&&val2){
+  res=val1/val2;
+  document.getElementById("dis").innerHTML=val1+"/"+val2+"="+res;}
+  else
+    {
+        document.getElementById("dis").innerHTML="Plz..enter values";
+
+    }
+
+}
+
+function clr(){
+document.getElementById("num1").value=""; 
+document.getElementById("num2").value="";
+document.getElementById("dis").innerHTML="";
+}
+
+    </script>
+</body>
+</html>
