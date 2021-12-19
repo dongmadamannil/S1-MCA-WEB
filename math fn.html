@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths functions</title>
+    <style>
+        tr {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <a href="math fn.html">Math functions</a><br>
+    <a href="string fn.html">String functions</a>
+    <div style="margin-left:150px;height: 50%;width: 50%;background-color: #C6C9CE;border-radius: 15px;">
+        <table style="margin-left: 15px;">
+            <tr>
+                <td>
+                    <input type="number" id="v1" placeholder="enter number">
+                </td>
+                <td>
+                    <input type="number" id="r1" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="floor" onclick="fn1()">
+                </td>
+            <tr>
+                <td>
+                    <input type="number" id="v2" placeholder="enter number">
+                </td>
+                <td>
+                    <input type="number" id="r2" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="Ceil" onclick="fn2()">
+                </td>
+            <tr>
+                <td>
+                    <input type="number" id="v3" placeholder="enter number">
+                </td>
+                <td>
+                    <input type="number" id="r3" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="Round" onclick="fn3()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="v41" placeholder="enter value">
+                </td>
+                <td>
+                    <input type="number" id="v42" placeholder="Enter value">
+                </td>
+                <td>
+                    <input type="number" id="r4" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="Power"  onclick="fn4()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="v5" placeholder="enter number">
+                </td>
+                <td>
+                    <input type="number" id="r5" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="SQRT"  onclick="fn5()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="v6" placeholder="enter number">
+                </td>
+                <td>
+                    <input type="number" id="r6" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="Absolute"  onclick="fn6()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="v7" placeholder="enter number">
+                </td>
+                <td>
+                    <input type="number" id="r7" placeholder="Result" >
+                </td>
+                <td>
+                    <input type="button" value="Log"  onclick="fn7()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="v81" placeholder="1st value">
+                </td>
+                <td>
+                    <input type="number" id="v82" placeholder="2nd value">
+                </td>
+                <td>
+                    <input type="number" id="r8" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="MAXIMUM"  onclick="fn8()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="v91" placeholder="1st value">
+                </td>
+                <td>
+                    <input type="number" id="v92" placeholder="2nd value">
+                </td>
+                <td>
+                    <input type="number" id="r9" placeholder="Result">
+                </td>
+                <td>
+                    <input type="button" value="MINIUM" onclick="fn9()">
+                </td>
+            </tr>
+        </table>
+    </div>
+<script>
+    function fn1(){//floor
+        document.getElementById("r1").value=Math.floor(Number(document.getElementById("v1").value));
+    }
+    function fn2(){//ceil
+        document.getElementById("r2").value=Math.ceil(Number(document.getElementById("v2").value));
+    }
+    function fn3(){//round
+        document.getElementById("r3").value=Math.round(Number(document.getElementById("v3").value));
+    }
+    function fn4(){//power two input
+        document.getElementById("r4").value=Math.pow(Number(document.getElementById("v41").value),Number(document.getElementById("v42").value));
+    }
+    function fn5(){//sqrt
+        document.getElementById("r5").value=Math.sqrt(Number(document.getElementById("v5").value));
+
+    }
+    function fn6(){//absolute
+        document.getElementById("r6").value=Math.abs(Number(document.getElementById("v6").value));
+
+    }
+    function fn7(){//log
+        document.getElementById("r7").value=Math.log(Number(document.getElementById("v7").value));
+
+    }
+    function fn8(){//maximum two input
+        document.getElementById("r8").value=Math.max(Number(document.getElementById("v81").value),Number(document.getElementById("v82").value));
+
+    }
+    function fn9(){//minium 2 ip
+        document.getElementById("r9").value=Math.min(Number(document.getElementById("v91").value),Number(document.getElementById("v92").value));
+
+    }
+</script>
+</body>
+</html>
