@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="reg_css.css">
     <title>Registration</title>
 </head>
-
 <body style="background-image: url('bk.jfif');color: #B2BFF7;">
   <style>
         .from_cmn {
@@ -45,25 +43,25 @@
          <tr><td><label id="k2" for="f2">Age</label></td> <td><input id="f2" type="number" placeholder="enter ur age" class="from_cmn" onkeyup="val2()" onblur="val2()"><br></td></tr>
                 <tr><td>  <label id="k3" for="f3">Email Id</label></td> <td><input id="f3" type="email" placeholder="enter ur Email ID" class="from_cmn" onkeyup="val3()" onblur="val3()"></td></tr>
                 <tr><td>   <label id="k4" for="f11">User Name</label></td> <td><input id="f11" type="text" placeholder="enter user name" class="from_cmn" onkeyup="val4()" onblur="val4()"></td></tr>
-                    <tr><td>    <label for="f13">Password</label></td><td><input id="f13" type="password" placeholder="enter ur Password" class="from_cmn"></td></tr>
-                        <tr><td>     <label for="f14">confirm Password</label></td><td><input id="f14" type="password" placeholder="re-enter Password" class="from_cmn"></td></tr>
+                    <tr><td>    <label id="k5" for="f13">Password</label></td><td><input id="f13" type="password" placeholder="enter ur Password" class="from_cmn" onkeyup="val5()" onblur="val5()" ></td></tr>
+                        <tr><td>     <label id="k6" for="f14">confirm Password</label></td><td><input id="f14" type="password" onkeyup="val6()" onblur="val6()" placeholder="re-enter Password" class="from_cmn"></td></tr>
             </table>
-                <input type="submit" value="SUBMIT" class="sub"><input type="reset" value="Clear" class="rest">
+                <input type="submit" value="SUBMIT" class="sub" id="subr" onclick="sub()">
             </from>
     </div>
     <script>
        // console.log(/^([a-z0-9]{5,})$/.test(12345));
-        s1=0;s2=0;s3=0;s4=0;
+        s1=0;s2=0;s3=0;s4=0;s5=0;s6=0;
 function val1(){//validation of name
 val=document.getElementById("f1").value;
 if(/^[a-zA-Z ]{1,30}$/.test(val)){
    s1=1
-document.getElementById("k1").style.color="green";
+document.getElementById("k1").style.color="green";test();
 }
 else
 {
   s1=0;
-  document.getElementById("k1").style.color="red";
+  document.getElementById("k1").style.color="red";test();
 }
 }
 function val2(){//validation of age
@@ -71,39 +69,80 @@ valu1=document.getElementById("f2").value;
 if(valu1>=5 &&valu1<=200)
 {
 s2=1;
-document.getElementById("k2").style.color="green";
+document.getElementById("k2").style.color="green";test();
 }
 else
 {
 s2=0;
-document.getElementById("k2").style.color="red";
+document.getElementById("k2").style.color="red";test();
 }
 }
 function val3(){//email validation
 valu2=document.getElementById("f3").value;
 if(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/.test(valu2)){//look into the regex for email
 s3=1;
-document.getElementById("k3").style.color="green";
+document.getElementById("k3").style.color="green";test();
 }
 else
 {
 s3=0;
-document.getElementById("k3").style.color="red";
+document.getElementById("k3").style.color="red";test();
 }
 }
 function val4(){//validation of user name
 valu3=document.getElementById("f11").value;
 if(/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(valu3)){
    s4=1
-document.getElementById("k4").style.color="green";
+document.getElementById("k4").style.color="green";test();
 }
 else
 {
   s4=0;
-  document.getElementById("k4").style.color="red";
+  document.getElementById("k4").style.color="red";test();
 }
 }
+function val5(){//validation of password
+valu4=document.getElementById("f13").value;
+if( /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(valu4)){
+   s5=1
+document.getElementById("k5").style.color="green";test();
+}
+else
+{
+  s5=0;
+  document.getElementById("k5").style.color="red";test();
+}
+}
+function val6(){//validation of c password
+valu5=document.getElementById("f14").value;
+valu6=document.getElementById("f13").value;
+if(valu5==valu6){
+   s6=1
+document.getElementById("k6").style.color="green";test();
+}
+else
+{
+  s6=0;
+  document.getElementById("k6").style.color="red";test();
+}
+}
+function test(){
+  if(s1==1&&s2==1&&s3==1&&s4==1&&s5==1&&s6==1){
+    document.getElementById("subr").style.backgroundColor="green";
+    document.getElementById("subr").disabled=false;
+    document.getElementById("subr").style.cursor="pointer";
+  }
+  else
+  {
+    document.getElementById("subr").style.backgroundColor="red";
+    document.getElementById("subr").disabled=true;
+    document.getElementById("subr").style.cursor="not-allowed";
 
+  }
+}
+function sub(){
+  alert("SUCCESS");
+}
     </script>
 </body>
 
