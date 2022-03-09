@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam</title>
+</head>
+<style>
+.txtbtn{
+    height: 45px;
+    width:225px;
+    border-radius:15px;
+    cursor:pointer;
+    margin-left: 15%;
+    background-color: rgb(37, 83, 168);
+    font-size: 22px;
+}
+.txtbtn:hover{
+    background-color: rgb(12, 43, 102);
+    color: aliceblue;
+}
+.rd{
+    cursor: pointer;
+}
+</style>
+<body>
+    <div style="background-color:gray;height: 90%;width:50%;border-radius: 15px;position: absolute;left:25%;cursor:default;"><br><br>
+  <h1 align="center" style="color: rgb(95, 13, 13);"><b><u>Exam</u></b></h1>
+  <div style="margin-left:20%;">
+    01.What is 5+7?<br>
+   <input type="radio" class="rd" id="ans1" name="qn1">A)12 <br>
+   <input type="radio"  class="rd"  name="qn1">B)13 <br>
+   <input type="radio"   class="rd" name="qn1">C)14<br>
+   <input type="radio"   class="rd" name="qn1">D)11<br>
+   02.What is 9*25?<br>
+   <input type="radio"  class="rd"  name="qn2">A)112 <br>
+   <input type="radio"  class="rd"  name="qn2" id="ans2"  >B)225 <br>
+   <input type="radio"  class="rd"  name="qn2">C)224<br>
+   <input type="radio"  class="rd"  name="qn2">D)200<br>
+   03.What is 5/5?<br>
+   <input type="radio"  class="rd" name="qn3">A)5 <br>
+   <input type="radio"   class="rd" name="qn3">B)0 <br>
+   <input type="radio"  class="rd"  name="qn3" id="ans3" >C)1<br>
+   <input type="radio"  class="rd"  name="qn3">D)3<br>
+   04.What is 5^2?<br>
+   <input type="radio"  class="rd" name="qn4">A)10 <br>
+   <input type="radio"  class="rd"  name="qn4">B)13 <br>
+   <input type="radio"   class="rd" name="qn4"  id="ans4" >C)25<br>
+   <input type="radio"  class="rd" name="qn4">D)2<br><br><br>
+   <input type="button" value="Submit" class="txtbtn" onclick="exam()">
+</div></div>
+   <script>
+function exam(){
+    mark=0;
+if(document.getElementById("ans1").checked){
+    mark=mark+1;
+}
+if(document.getElementById("ans2").checked){
+    mark=mark+1;
+}
+if(document.getElementById("ans3").checked){
+    mark=mark+1;
+}
+if(document.getElementById("ans4").checked){
+    mark=mark+1;
+}
+document.write("<h1 align='center' style='color:red;margin-top:20%;'>Mark Obtained:</h1>");
+document.write("<h1  align='center' style='color:green;'>"+mark+" <br><span style='color:black;'>Total marks:4</span></h1>");
+}
+
+   </script>
+</body>
+</html>
